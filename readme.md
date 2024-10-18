@@ -51,21 +51,54 @@ git push
 
 [`git cherry-pick`使用以及理解](https://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
 
+## `git tag`
+
+[`git tag`使用以及理解](https://blog.csdn.net/QH_JAVA/article/details/77979622)
+
+```
+# 创建带有说明的标签，用-a指定标签名，-m指定说明文字
+$ git tag -a v0.1 -m "version 0.1 released push url" d5a65e9
+
+# push所有tag
+$ git push origin --tags
+```
+
+## 仓库克隆
+
+```
+# 通过ssh将git仓库克隆到本地指定路径并重命名
+$ git clone git@github.com:username/repo.git /path/to/newname
+```
+
+## 一些常用命令
+```
+# 创建并切换到对应分支
+git checkout -b <branch_name>
+
+# 强制将一个分支指针移动到指定的提交或位置
+git branch -f <branch_name> <commit>
+```
+
 ## indetermination
 
-main分支 / dev分支
+### 开发过程
+
+dev分支
 
 ```
-git checkout -b dev_xx
-# 在dev_xx分支上
+git checkout -b feat
+
+# 在feat分支上
 git commit
-git fetch origin dev
-git merge dev  # 需要的话解决冲突
 
 # 在dev分支上
-git merge dev_xx
+git pull
+git merge feat  # 有需要的话解决冲突
 git push
 ```
+
+### 冲突
+无论是`git merge`还是`git rebase`执行后遇到冲突, 终端可能会显示一个vim编辑器, 用于解决冲突。可以退出该编辑器, 使用vscode等解决冲突, 冲突解决后, **测试、测试、测试**！一切正常后, 对于merge操作, `git add .`然后`git commit`; 对于rebase操作, `git add .`然后`git rebase --continue`。(没有冲突的文件均已添加到暂存区, 目的是只需要集中处理发生冲突的文件)
 
 ## todo
 
