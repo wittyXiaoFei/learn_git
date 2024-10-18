@@ -105,3 +105,16 @@ git push
 - [`git fetch`](https://www.yiibai.com/git/git_fetch.html)
 - [Git删除远程某个历史提交记录](https://www.jianshu.com/p/18b5cbc3e702)
 - [`git rebase`](https://lvan-zhang.blog.csdn.net/article/details/128848133?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-128848133-blog-106479779.235%5Ev43%5Epc_blog_bottom_relevance_base9&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-128848133-blog-106479779.235%5Ev43%5Epc_blog_bottom_relevance_base9&utm_relevant_index=1)
+
+
+(以下内容来自于chatgpt)在 Git 的交互式 rebase（`git rebase -i`）中，您可以使用多种命令来修改提交历史。以下是一些常用命令及其含义：
+  1. **pick**: 保留这个提交，作为历史的一部分。
+  2. **reword**: 保留这个提交，但修改提交信息。
+  3. **edit**: 停在这个提交上，让您可以更改内容或提交信息。
+  4. **squash**: 将这个提交合并到前一个提交，并允许您修改合并后的提交信息。
+  5. **fixup**: 类似于 squash，但会丢弃这个提交的提交信息，直接合并到前一个提交。
+  6. **exec**: 执行 shell 命令，可以用于在 rebase 过程中运行脚本或命令。
+  7. **drop**: 删除这个提交，不将其包含在新的历史中。
+  8. **label**: 为当前的提交创建一个标签，用于后续的引用。
+  9. **reset**: 将 HEAD 重置到指定的标签或提交，常用于更改 rebase 的进度。
+  10. **merge**: 将当前提交与之前的提交进行合并，适用于复杂的合并场景。
