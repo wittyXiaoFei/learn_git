@@ -77,6 +77,13 @@ git checkout -b <branch_name>
 
 # 强制将一个分支指针移动到指定的提交或位置
 git branch -f <branch_name> <commit>
+
+'''
+用于修改最近一次提交的命令, 你可以修改提交的内容、修改提交信息或同时修改两者
+但是需要注意的是执行 git commit --amend 后，Git会将你在暂存区的新更改（文件内容）与修改后的提交信息合并到一个**新的提交**中，替换原来的提交
+git commit --amend 会改变提交历史，因此最好不要在已经推送到远程仓库的提交上使用，特别是在多人协作的项目中。这会影响其他人的工作。如果你已经推送了该提交，并且需要修改，通常需要使用 git push --force 强制推送更改，但这需要谨慎操作，因为会重写远程历史。
+'''
+git commit --amend
 ```
 
 ## indetermination
